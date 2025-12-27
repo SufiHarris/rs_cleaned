@@ -1,0 +1,32 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+# Security Headers
+<IfModule mod_headers.c>
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Block access to sensitive files
+<FilesMatch "^.*(error_log|wp-config\.php|php.ini|\.[hH][tT][aApP].*)$">
+Order deny,allow
+Deny from all
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect wp-config.php
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>

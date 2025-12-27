@@ -1,0 +1,17 @@
+duplicate-page
+elementor
+hostinger
+hostinger-ai-assistant
+hostinger-easy-onboarding
+index.php
+insert-headers-and-footers
+litespeed-cache
+polylang
+pro-elements
+really-simple-ssl
+site-mailer
+theme-editor
+woocommerce
+wordfence
+wpdm-premium-packages
+wpforms-lite
